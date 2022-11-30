@@ -1,0 +1,22 @@
+                Executable : D:\ProgramFiles\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
+arguments : 
+-HD:\ZCode\crack\frida\open_source\AntiFrida-2\app
+-DCMAKE_FIND_ROOT_PATH=D:\ZCode\crack\frida\open_source\AntiFrida-2\app\.cxx\cmake\debug\prefab\armeabi-v7a\prefab
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=D:\ProgramFiles\Android\Sdk\ndk\21.1.6352462\build\cmake\android.toolchain.cmake
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_NDK=D:\ProgramFiles\Android\Sdk\ndk\21.1.6352462
+-DANDROID_PLATFORM=android-21
+-DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a
+-DCMAKE_ANDROID_NDK=D:\ProgramFiles\Android\Sdk\ndk\21.1.6352462
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\ZCode\crack\frida\open_source\AntiFrida-2\app\build\intermediates\cmake\debug\obj\armeabi-v7a
+-DCMAKE_MAKE_PROGRAM=D:\ProgramFiles\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=21
+-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+-BD:\ZCode\crack\frida\open_source\AntiFrida-2\app\.cxx\cmake\debug\armeabi-v7a
+-GNinja
+jvmArgs : 
+
+Build command args:

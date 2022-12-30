@@ -10,13 +10,13 @@
 #include <unistd.h>
 #include <errno.h>
 
-#define APPNAME "FridaDetectionTest"
+#define APPNAME "AntiFrida-2"
 #define MAX_LINE 512
 
 extern "C" int my_openat(int, const char *, int, int);
 extern "C" int my_read(int, void *, int);
 
-static char keyword[] = "LIBFRIDA";
+static char keyword[] = "frida";
 
 int find_mem_string(unsigned long, unsigned long, char *, unsigned int);
 
@@ -44,7 +44,6 @@ void *detect_frida_loop(void *) {
         /*
          * 1: Frida Server Detection.
          */
-
         for (i = 0; i <= 65535; i++) {
             sock = socket(AF_INET, SOCK_STREAM, 0);
             sa.sin_port = htons(i);
@@ -73,7 +72,7 @@ void *detect_frida_loop(void *) {
 
         num_found = 0;
 
-        if ((fd = my_openat(AT_FDCWD, "/proc/self/maps", O_RDONLY, 0)) >= 0) {
+        if ((fd = openat(AT_FDCWD, "/proc/self/maps", O_RDONLY, 0)) >= 0) {
             while ((read_one_line(fd, map, MAX_LINE)) > 0) {
                 if (scan_executable_segments(map) == 1) {
                     num_found++;
@@ -89,7 +88,7 @@ void *detect_frida_loop(void *) {
 
         }
 
-        sleep(3);
+        sleep(1);
 
         __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "检查完成");
     }
@@ -114,7 +113,6 @@ int find_mem_string(unsigned long start, unsigned long end, char *bytes, unsigne
     int matched = 0;
 
     while ((unsigned long) pmem < (end - len)) {
-
         if (*pmem == bytes[0]) {
 
             matched = 1;
@@ -129,9 +127,7 @@ int find_mem_string(unsigned long start, unsigned long end, char *bytes, unsigne
                 return 1;
             }
         }
-
         pmem++;
-
     }
     return 0;
 }

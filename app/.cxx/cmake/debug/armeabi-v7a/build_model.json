@@ -177,6 +177,7 @@
       "project": {
         "compilerSettingsCacheFolder": "D:\\ZCode\\crack\\frida\\open_source\\AntiFrida-2\\.cxx",
         "cxxFolder": "D:\\ZCode\\crack\\frida\\open_source\\AntiFrida-2\\.cxx",
+        "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
